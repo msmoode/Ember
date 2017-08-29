@@ -1,4 +1,11 @@
 install:
-  - npm install
+- npm install
 script:
-  - npm build
+- npm build
+deploy:
+  provider: releases
+  api_key:
+    secure: Wngj2blwkeBXL6EKuCP/Q7I3k7ne8/XrBoXTELKllS0pu8SrSvAf68Ob5I0j36YmOU7QHlFkDLzf7qfLYlUsY3aZ0ZSIuQzHVRLXcRip9JQ5Zvn7bE1lZQptwKN9nH8g/5hD6Tc0uYKWpCYGgJ3NaT9rjwPxc/l1DO5j83ns82RYvXvWErs5iX3Xqane/+mM7RBNapOfI2ctej1fswtIWo21TDxfzAcESRgRtrDh6H2n3txuELfoFWxtf6rk/rfX4v873Qqb8j4THcknAPJm+RoePBfx06yxX30Tryc+CxrLvqww3LlevgnyMjew97X/SDm0mTgahi2LUkXRDy7Gb+pGtKyQqNJNJ4WkbABGdvsyIpt6eGE2ASlwymui04k2TM1LuWmpSuMkDj5b67eNW8RnIP+dobp++NEA6guGnHHepMV6aKkpR9T/7DkfcIUVg2eZU7Qm72vJkSIkYb1QQPklxGrcw5uISOXopzWh+In8ta7YOilbH/Lh84/dqdDXYBija6zoh0EkZQSFkBmE35eBDULWI0pLhgc5R2F4WvNPlgl+3fDtQkK9hZjD8bzKA1XaNzvJcYgrryd7M/79A7NdXHfLZG3dDxN1SgUBS97wpkkK3hVSFmvkxWaUKvnXBRY4zMthqzQW0Khqab96WZofrIQdS48ENlUFAN+Mh0U=
+  file: ./out/bundle.js
+  on:
+    repo: tjhz/Ember
