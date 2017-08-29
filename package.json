@@ -1,0 +1,10 @@
+{
+  "name": "Ember",
+  "version": "1.0.0",
+  "description": "React JS Tumblr Theme",
+  "author": "TJHZ",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.6.1"
+  }
+}
