@@ -1,6 +1,6 @@
-import React from 'React'
+import React from 'react'
 import toRegex from 'path-to-regexp'
-import createHistory from 'history/lib/createBrowserHistory'
+import createHistory from 'history/createBrowserHistory'
 
 export default class Router extends React.Component {
 

@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'app', 'app.js'),
+  entry: ['babel-polyfill', path.join(__dirname, 'src', 'app', 'app.js')],
   output: {
     path: path.join(__dirname, 'target'),
     filename: 'bundle.js'
@@ -18,7 +18,8 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['react']
+              presets: ['react', 'stage-2', 'es2015'],
+              plugins: ['transform-async-to-generator']
             }
           }
         ]
