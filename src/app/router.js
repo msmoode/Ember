@@ -11,6 +11,8 @@ export default class Router extends React.Component {
     this.currentComponent = null
 
     this.onLocationChange = this.onLocationChange.bind(this)
+    this.updateReact = this.updateReact.bind(this)
+    this.render = this.render.bind(this)
   }
 
   matchURI (path, uri) {
@@ -34,7 +36,6 @@ export default class Router extends React.Component {
       const result = await route.action({ ...context, params })
       if (result) return result
     }
-    console.log(context, routes)
     const error = new Error('Not found')
     error.status = 404
     throw error
@@ -46,7 +47,6 @@ export default class Router extends React.Component {
   }
 
   onLocationChange (location) {
-    console.log(location)
     this.resolve(this.props.routes, location)
       .then(this.updateReact)
   }

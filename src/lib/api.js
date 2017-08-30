@@ -14,5 +14,7 @@ export default class Blog {
       api_key: this.apiKey,
       ...properties
     }))
+    .then(response => response.json())
+    .then(response => response.response)
   }
 }

@@ -12,22 +12,22 @@ const routes = [
   {
     path: '/',
     async action ({params}) {
-      const data = await blog.fetch('/info')
-      return <Home data={data} />
+      const res = await blog.fetch('/info')
+      return <Home data={res.blog} />
     }
   },
   {
     path: '/2',
     async action ({params}) {
-      const data = await blog.fetch('/info')
-      return <Home data={data} />
+      const res = await blog.fetch('/info')
+      return <Home data={res.blog} />
     }
   }
 ]
 
 class Home extends React.Component {
   render () {
-    return <a>{this.props.data}</a>
+    return <a>{this.props.data.title}</a>
   }
 }
 
