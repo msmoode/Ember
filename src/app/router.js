@@ -7,7 +7,7 @@ const history = createHistory()
 export default class Router extends React.Component {
   constructor (props) {
     super(props)
-    this.onLocationChange(history.getCurrentLocation)
+    this.onLocationChange(history.getCurrentLocation())
 
     this.onLocationChange = this.onLocationChange.bind(this)
   }
