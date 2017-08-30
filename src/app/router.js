@@ -2,7 +2,15 @@ import React from 'react'
 import toRegex from 'path-to-regexp'
 import createHistory from 'history/createBrowserHistory'
 
+const history = createHistory()
+
 export default class Router extends React.Component {
+  constructor (props) {
+    super(props)
+    this.onLocationChange(history.getCurrentLocation)
+
+    this.onLocationChange = this.onLocationChange.bind(this)
+  }
 
   matchURI (path, uri) {
     const keys = []
@@ -31,9 +39,7 @@ export default class Router extends React.Component {
   }
 
   componentDidMount () {
-    const history = createHistory()
     history.listen(this.onLocationChange)
-    this.onLocationChange(history.getCurrentLocation)
   }
 
   onLocationChange (location) {
