@@ -7,7 +7,8 @@ const history = createHistory()
 export default class Router extends React.Component {
   constructor (props) {
     super(props)
-    this.onLocationChange(history.getCurrentLocation())
+
+    this.currentComponent = null
 
     this.onLocationChange = this.onLocationChange.bind(this)
   }
@@ -33,6 +34,7 @@ export default class Router extends React.Component {
       const result = await route.action({ ...context, params })
       if (result) return result
     }
+    console.log(context, routes)
     const error = new Error('Not found')
     error.status = 404
     throw error
@@ -40,9 +42,11 @@ export default class Router extends React.Component {
 
   componentDidMount () {
     history.listen(this.onLocationChange)
+    this.onLocationChange(history.location)
   }
 
   onLocationChange (location) {
+    console.log(location)
     this.resolve(this.props.routes, location)
       .then(this.updateReact)
   }
