@@ -10,8 +10,12 @@
   "dependencies": {
     "fela": "^5.1.1",
     "fela-dom": "^5.0.7",
+    "history": "^4.7.2",
+    "path-to-regexp": "^2.0.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "request": "^2.81.0",
+    "tumblr.js": "^1.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
